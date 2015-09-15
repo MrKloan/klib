@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <logicalFolder name="klib" displayName="klib" projectFiles="true">
+        <logicalFolder name="Containers" displayName="Containers" projectFiles="true">
+          <itemPath>src/main/klib/Containers/Array.h</itemPath>
+          <itemPath>src/main/klib/Containers/List.h</itemPath>
+          <itemPath>src/main/klib/Containers/Map.h</itemPath>
+          <itemPath>src/main/klib/Containers/Queue.h</itemPath>
+          <itemPath>src/main/klib/Containers/Stack.h</itemPath>
+          <itemPath>src/main/klib/Containers/Tree.h</itemPath>
+        </logicalFolder>
+        <logicalFolder name="Network" displayName="Network" projectFiles="true">
+        </logicalFolder>
+        <logicalFolder name="System" displayName="System" projectFiles="true">
+          <itemPath>src/main/klib/System/Boolean.h</itemPath>
+          <itemPath>src/main/klib/System/String.h</itemPath>
+        </logicalFolder>
+        <itemPath>src/main/klib/klib.h</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>src/main/Array.c</itemPath>
+      <itemPath>src/main/List.c</itemPath>
+      <itemPath>src/main/Map.c</itemPath>
+      <itemPath>src/main/Queue.c</itemPath>
+      <itemPath>src/main/Stack.c</itemPath>
+      <itemPath>src/main/String.c</itemPath>
+      <itemPath>src/main/Tree.c</itemPath>
+      <itemPath>src/main/main.c</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>.gitignore</itemPath>
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+    <itemPath>README.md</itemPath>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>src/main</Elem>
+    <Elem>src/test</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+      </compileType>
+      <item path="README.md" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main/Array.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/main/List.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/main/Map.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/main/Queue.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/main/Stack.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/main/String.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/main/Tree.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/main/klib/Containers/Array.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main/klib/Containers/List.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main/klib/Containers/Map.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main/klib/Containers/Queue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main/klib/Containers/Stack.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main/klib/Containers/Tree.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main/klib/System/Boolean.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main/klib/System/String.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main/klib/klib.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main/main.c" ex="false" tool="0" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+          <incDir>
+            <pElem>.</pElem>
+          </incDir>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <linkerTool>
+          <output>${TESTDIR}/TestFiles/f1</output>
+          <linkerLibItems>
+            <linkerOptionItem>-lcunit</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="README.md" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main/Array.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/main/List.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/main/Map.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/main/Queue.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/main/Stack.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/main/String.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/main/Tree.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="src/main/klib/Containers/Array.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main/klib/Containers/List.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main/klib/Containers/Map.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main/klib/Containers/Queue.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main/klib/Containers/Stack.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main/klib/Containers/Tree.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main/klib/System/Boolean.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main/klib/System/String.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main/klib/klib.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main/main.c" ex="false" tool="0" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>
