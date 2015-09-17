@@ -16,6 +16,7 @@ extern "C" {
 
 //OS check & DLL support for Windows
 #ifdef WIN32
+	#include <windows.h>
     #define libimp __declspec(dllimport)
     #define libexp __declspec(dllexport)
 #elif defined (linux)
@@ -24,7 +25,7 @@ extern "C" {
 #else
     #error "klib is not developped for your current operating system."
 #endif
-    
+
 //Standard C headers
 #include <stdio.h>
 #include <stdlib.h>
@@ -33,6 +34,7 @@ extern "C" {
 
 //klib headers
 #include "System/Boolean.h"
+#include "System/Timer.h"
 #include "System/String.h"
     
 #include "Containers/Array.h"

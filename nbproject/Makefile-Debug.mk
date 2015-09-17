@@ -41,6 +41,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/src/main/Queue.o \
 	${OBJECTDIR}/src/main/Stack.o \
 	${OBJECTDIR}/src/main/String.o \
+	${OBJECTDIR}/src/main/Timer.o \
 	${OBJECTDIR}/src/main/Tree.o \
 	${OBJECTDIR}/src/main/main.o
 
@@ -98,6 +99,11 @@ ${OBJECTDIR}/src/main/String.o: src/main/String.c
 	${MKDIR} -p ${OBJECTDIR}/src/main
 	${RM} "$@.d"
 	$(COMPILE.c) -g -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main/String.o src/main/String.c
+
+${OBJECTDIR}/src/main/Timer.o: src/main/Timer.c 
+	${MKDIR} -p ${OBJECTDIR}/src/main
+	${RM} "$@.d"
+	$(COMPILE.c) -g -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/main/Timer.o src/main/Timer.c
 
 ${OBJECTDIR}/src/main/Tree.o: src/main/Tree.c 
 	${MKDIR} -p ${OBJECTDIR}/src/main

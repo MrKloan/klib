@@ -18,13 +18,16 @@ Timer* libexp TimerNew(void)
  */
 void libexp TimerInit(Timer *this)
 {
-    this->start = TimerStart;
-    this->stop = TimerStop;
-    this->time = TimerTime;
-    this->cpu = TimerCPU;
-    this->cpuTime = TimerCPUTime;
-    
-    this->free = TimerFree;
+	if(this != NULL)
+	{
+		this->start = TimerStart;
+		this->stop = TimerStop;
+		this->time = TimerTime;
+		this->cpu = TimerCPU;
+		this->cpuTime = TimerCPUTime;
+
+		this->free = TimerFree;
+	}
 }
 
 /**
@@ -41,12 +44,17 @@ void libexp TimerFree(Timer *this)
  * Les valeurs à TIMER_START et TIMER_STOP sont initialisées.
  * @param this
  */
-void libexp TimerStart(Timer *this)
+boolean libexp TimerStart(Timer *this)
 {
+	if(this == NULL)
+		return false;
+	
     this->_cpu[TIMER_START] = clock();
     this->_cpu[TIMER_STOP] = this->_cpu[TIMER_STOP];
     gettimeofday(&this->_time[TIMER_START], NULL);
     this->_time[TIMER_STOP] = this->_time[TIMER_START];
+	
+	return true;
 }
 
 /**
@@ -54,10 +62,15 @@ void libexp TimerStart(Timer *this)
  * Les valeurs à TIMER_STOP sont modifiées.
  * @param this
  */
-void libexp TimerStop(Timer *this)
+boolean libexp TimerStop(Timer *this)
 {
+	if(this == NULL)
+		return false;
+	
     gettimeofday(&this->_time[TIMER_STOP], NULL);
     this->_cpu[TIMER_STOP] = clock();
+	
+	return true;
 }
 
 /**
@@ -67,7 +80,7 @@ void libexp TimerStop(Timer *this)
  */
 double libexp TimerTime(Timer *this)
 {
-    return (double)(this->_time[TIMER_STOP].tv_sec + this->_time[TIMER_STOP].tv_usec*0.000001) - (double)(this->_time[TIMER_START].tv_sec + this->_time[TIMER_START].tv_usec*0.000001);
+    return (this != NULL) ? (double)(this->_time[TIMER_STOP].tv_sec + this->_time[TIMER_STOP].tv_usec*0.000001) - (double)(this->_time[TIMER_START].tv_sec + this->_time[TIMER_START].tv_usec*0.000001) : -1.;
 }
 
 /**
@@ -75,9 +88,9 @@ double libexp TimerTime(Timer *this)
  * @param this
  * @return 
  */
-size_t libexp TimerCPU(Timer *this)
+int libexp TimerCPU(Timer *this)
 {
-    return (size_t)(this->_cpu[TIMER_STOP] - this->_cpu[TIMER_START]);
+	return (this != NULL) ? (size_t)(this->_cpu[TIMER_STOP] - this->_cpu[TIMER_START]) : -1;
 }
 
 /**
@@ -87,7 +100,7 @@ size_t libexp TimerCPU(Timer *this)
  */
 double libexp TimerCPUTime(Timer *this)
 {
-    return (double)(this->_cpu[TIMER_STOP] - this->_cpu[TIMER_START])/CLOCKS_PER_SEC;
+    return (this != NULL) ? (double)(this->_cpu[TIMER_STOP] - this->_cpu[TIMER_START])/CLOCKS_PER_SEC : -1.;
 }
 
 #ifdef WIN32

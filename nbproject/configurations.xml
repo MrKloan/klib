@@ -18,6 +18,7 @@
         <logicalFolder name="System" displayName="System" projectFiles="true">
           <itemPath>src/main/klib/System/Boolean.h</itemPath>
           <itemPath>src/main/klib/System/String.h</itemPath>
+          <itemPath>src/main/klib/System/Timer.h</itemPath>
         </logicalFolder>
         <itemPath>src/main/klib/klib.h</itemPath>
       </logicalFolder>
@@ -35,6 +36,7 @@
       <itemPath>src/main/Queue.c</itemPath>
       <itemPath>src/main/Stack.c</itemPath>
       <itemPath>src/main/String.c</itemPath>
+      <itemPath>src/main/Timer.c</itemPath>
       <itemPath>src/main/Tree.c</itemPath>
       <itemPath>src/main/main.c</itemPath>
     </logicalFolder>
@@ -90,6 +92,8 @@
       </item>
       <item path="src/main/String.c" ex="false" tool="0" flavor2="0">
       </item>
+      <item path="src/main/Timer.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="src/main/Tree.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="src/main/klib/Containers/Array.h" ex="false" tool="3" flavor2="0">
@@ -107,6 +111,8 @@
       <item path="src/main/klib/System/Boolean.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/main/klib/System/String.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main/klib/System/Timer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/main/klib/klib.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -159,6 +165,8 @@
       </item>
       <item path="src/main/String.c" ex="false" tool="0" flavor2="0">
       </item>
+      <item path="src/main/Timer.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="src/main/Tree.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="src/main/klib/Containers/Array.h" ex="false" tool="3" flavor2="0">
@@ -176,6 +184,8 @@
       <item path="src/main/klib/System/Boolean.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/main/klib/System/String.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="src/main/klib/System/Timer.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/main/klib/klib.h" ex="false" tool="3" flavor2="0">
       </item>

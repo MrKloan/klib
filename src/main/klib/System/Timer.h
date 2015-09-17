@@ -6,7 +6,7 @@ extern "C" {
 #endif
     
 #ifdef WIN32
-    #define EPOCH UINT64CONST(116444736000000000)
+    #define EPOCH 116444736000000000ULL
     int gettimeofday(struct timeval*, struct timeval*);
 #endif
     
@@ -19,23 +19,23 @@ typedef struct Timer {
     struct timeval _time[2];
     clock_t _cpu[2];
     
-    void (*start)(struct Timer*);
-    void (*stop)(struct Timer*);
+    boolean (*start)(struct Timer*);
+    boolean (*stop)(struct Timer*);
     double (*time)(struct Timer*);
-    size_t (*cpu)(struct Timer*);
+    int (*cpu)(struct Timer*);
     double (*cpuTime)(struct Timer*);
     
     void (*free)(struct Timer*);
 } Timer;
 
 Timer* libexp TimerNew(void);
-void libexp TimerInit(Timer*);
-void libexp TimerFree(Timer*);
+boolean libexp TimerInit(Timer*);
+boolean libexp TimerFree(Timer*);
 
 void libexp TimerStart(Timer*);
 void libexp TimerStop(Timer*);
 double libexp TimerTime(Timer*);
-size_t libexp TimerCPU(Timer*);
+int libexp TimerCPU(Timer*);
 double libexp TimerCPUTime(Timer*);
 
 #ifdef	__cplusplus

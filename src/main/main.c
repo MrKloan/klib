@@ -124,7 +124,7 @@ int main(int argc, char **argv)
     return 0;
 }//*/
 
-//MAP
+/*/MAP
 int main(int argc, char** argv)
 {
     Map *map = MapNew();
@@ -216,4 +216,22 @@ int main(int argc, char **argv)
     w->free(w);
     
     return 0;
-}*/
+}//*/
+
+//TIMER
+int main(int argc, char **argv)
+{
+    Timer *timer = TimerNew();
+    long i;
+	
+	timer->start(timer);
+	for(i = 0 ; i < 999999999L ; i++);
+	timer->stop(timer);
+	
+	printf("Exec time: %lf\n", timer->time(timer));
+	printf("Clocks: %u\n", timer->cpu(timer));
+	printf("CPU time: %lf\n", timer->cpuTime(timer));
+
+	timer->free(timer);
+    return 0;
+}//*/
