@@ -32,10 +32,10 @@ void libexp QueueFree(Queue *this)
     free(this);
 }
 
-void libexp QueuePush(Queue *this, void *value, size_t size, boolean allocated)
+boolean libexp QueuePush(Queue *this, void *value, size_t size, boolean allocated)
 {
 	if(this == NULL || value == NULL)
-		return;
+		return false;
 	
     QueueItem *last = this->element, *item = malloc(sizeof(QueueItem));
     
@@ -63,6 +63,7 @@ void libexp QueuePush(Queue *this, void *value, size_t size, boolean allocated)
         last->next = item;
     
     this->size++;
+	return true;
 }
 
 void* libexp QueuePop(Queue *this)

@@ -6,11 +6,7 @@ extern "C" {
 #endif
     
 #ifdef WIN32
-    #include <windows.h>
-    #include <winsock2.h>
-
     typedef size_t socklen_t;
-
 #elif defined (linux)
     #define libexp
     #define libexp

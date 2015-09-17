@@ -16,7 +16,6 @@ extern "C" {
 
 //OS check & DLL support for Windows
 #ifdef WIN32
-	#include <windows.h>
     #define libimp __declspec(dllimport)
     #define libexp __declspec(dllexport)
 #elif defined (linux)
@@ -31,11 +30,18 @@ extern "C" {
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+	
+#ifdef WIN32
+	#include <windows.h>
+    #include <winsock2.h>
+#endif
 
 //klib headers
 #include "System/Boolean.h"
 #include "System/Timer.h"
 #include "System/String.h"
+	
+#include "Network/Socket.h"
     
 #include "Containers/Array.h"
 #include "Containers/List.h"

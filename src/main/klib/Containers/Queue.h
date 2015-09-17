@@ -15,7 +15,7 @@ typedef struct Queue {
     QueueItem *element;
     size_t size;
     
-    void (*push)(struct Queue*, void*, size_t, boolean);
+    boolean (*push)(struct Queue*, void*, size_t, boolean);
     void *(*pop)(struct Queue*);
     size_t (*count)(struct Queue*);
     void (*clear)(struct Queue*);
@@ -26,7 +26,7 @@ Queue* libexp QueueNew(void);
 void libexp QueueInit(Queue*);
 void libexp QueueFree(Queue*);
 
-void libexp QueuePush(Queue*, void*, size_t, boolean);
+boolean libexp QueuePush(Queue*, void*, size_t, boolean);
 void* libexp QueuePop(Queue*);
 size_t libexp QueueCount(Queue*);
 void libexp QueueClear(Queue*);

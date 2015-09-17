@@ -4,7 +4,7 @@ unsigned char libexp SocketStart(void)
 {
 #ifdef WIN32
     WSADATA wsa;
-    if(WSAStartup(MAKEWORD(2,2), &wsa) == 0)
+    if(WSAStartup(MAKEWORD(2, 2), &wsa) == 0)
         return 1;
     else
         return 0;

@@ -32,7 +32,7 @@ void libexp StackFree(Stack *this)
 	}
 }
 
-void libexp StackPush(Stack *this, void *value, size_t size, boolean allocated)
+boolean libexp StackPush(Stack *this, void *value, size_t size, boolean allocated)
 {
 	if(this != NULL && value != NULL)
 	{
@@ -50,7 +50,10 @@ void libexp StackPush(Stack *this, void *value, size_t size, boolean allocated)
 		this->element = item;
 
 		this->size++;
+		return true;
 	}
+	
+	return false;
 }
 
 void* libexp StackPop(Stack *this)

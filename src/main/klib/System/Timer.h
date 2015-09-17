@@ -29,11 +29,11 @@ typedef struct Timer {
 } Timer;
 
 Timer* libexp TimerNew(void);
-boolean libexp TimerInit(Timer*);
-boolean libexp TimerFree(Timer*);
+void libexp TimerInit(Timer*);
+void libexp TimerFree(Timer*);
 
-void libexp TimerStart(Timer*);
-void libexp TimerStop(Timer*);
+boolean libexp TimerStart(Timer*);
+boolean libexp TimerStop(Timer*);
 double libexp TimerTime(Timer*);
 int libexp TimerCPU(Timer*);
 double libexp TimerCPUTime(Timer*);

@@ -15,7 +15,7 @@ typedef struct Stack {
     StackItem *element;
     size_t size;
     
-    void (*push)(struct Stack*, void*, size_t, boolean);
+    boolean (*push)(struct Stack*, void*, size_t, boolean);
     void *(*pop)(struct Stack*);
     size_t (*count)(struct Stack*);
     void (*clear)(struct Stack*);
@@ -26,7 +26,7 @@ Stack* libexp StackNew(void);
 void libexp StackInit(Stack*);
 void libexp StackFree(Stack*);
 
-void libexp StackPush(Stack*, void*, size_t, boolean);
+boolean libexp StackPush(Stack*, void*, size_t, boolean);
 void* libexp StackPop(Stack*);
 size_t libexp StackCount(Stack*);
 void libexp StackClear(Stack*);
