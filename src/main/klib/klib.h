@@ -1,6 +1,6 @@
 /**
  * Name:    klib
- * Author:  Valentin Fries <contact@fries.io>
+ * Author:  Valentin Fries
  * Version: 1.0.0-SNAPSHOT
  * Date:    29/07/2015
  * 
